@@ -8,6 +8,10 @@ function HomePage() {
         <HomeCarousel/>
         <div>
           <HomeSectionCarosel/>
+          <HomeSectionCarosel/>
+          <HomeSectionCarosel/>
+          <HomeSectionCarosel/>
+          <HomeSectionCarosel/>
         </div>
     </div>
   )

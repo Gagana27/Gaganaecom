@@ -3,13 +3,19 @@ import AliceCarousel from "react-alice-carousel";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Button } from "@mui/material";
+import { useState } from "react";
 export const HomeSectionCarosel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const responsive = {
     0: { items: 1 },
     720: { items: 3 },
     1024: { items: 5.5 },
   };
-  const items = [1, 1, 1, 1, 1].map((item) => <HomeSectionCard />);
+  const slidePrev = () => setActiveIndex(activeIndex - 1);
+  const slideNext = () => setActiveIndex(activeIndex + 1);
+  const syncActiveIndex = ({ item }) => setActiveIndex(item);
+
+  const items = [1, 1, 1, 1, 1,1,1,1,1].map((item) => <HomeSectionCard />);
   return (
     <div className="relative px-4 lg:px-8">
       <div className="relative p-5">
@@ -19,10 +25,14 @@ export const HomeSectionCarosel = () => {
           infinite
           responsive={responsive}
           disableButtonsControls
+          onSlideChanged={syncActiveIndex}
+          activeIndex={activeIndex}
         />
-        <Button
+        
+        {activeIndex !== items.length - 5 && (<Button
           variant="contained"
           className="z-50 "
+          onClick={slideNext}
           sx={{
             position: "absolute",
             top: "8rem",
@@ -33,10 +43,11 @@ export const HomeSectionCarosel = () => {
         >
           <ArrowForwardIosIcon sx={{ transform: "rotate(90deg)" }} />
         </Button>
-
-        <Button
+        )}
+        {activeIndex !== 0 && ( <Button
           variant="contained"
           className="z-50 "
+          onClick={slidePrev}
           sx={{
             position: "absolute",
             top: "8rem",
@@ -47,6 +58,7 @@ export const HomeSectionCarosel = () => {
         >
           <ArrowForwardIosIcon sx={{ transform: "rotate(90deg)" }} />
         </Button>
+        )}
       </div>
     </div>
   );

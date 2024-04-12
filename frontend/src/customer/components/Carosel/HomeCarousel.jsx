@@ -34,6 +34,8 @@ const App = () => {
     <Router>
       <div className="App">
         <HomeCarousel />
+        
+
       </div>
     </Router>
   );
