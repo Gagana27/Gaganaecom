@@ -1,7 +1,8 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Button } from "@mui/material";
 export const HomeSectionCarosel = () => {
   const responsive = {
     0: { items: 1 },
@@ -19,11 +20,33 @@ export const HomeSectionCarosel = () => {
           responsive={responsive}
           disableButtonsControls
         />
-        <button variant="contained" className="z-50 " sx={{position:"absolute", top:'8rem', right:'0rem', transform:'translateX(50%) rotate(90deg)'}} aria-label="next">
-    
-        <KeyboardArrowLeftIcon sx={{transform:"rotate(90deg)"}}/>
-    
-        </button>
+        <Button
+          variant="contained"
+          className="z-50 "
+          sx={{
+            position: "absolute",
+            top: "8rem",
+            right: "0rem",
+            transform: "translateX(50%) rotate(90deg)",
+          }}
+          aria-label="next"
+        >
+          <ArrowForwardIosIcon sx={{ transform: "rotate(90deg)" }} />
+        </Button>
+
+        <Button
+          variant="contained"
+          className="z-50 "
+          sx={{
+            position: "absolute",
+            top: "8rem",
+            left: "0rem",
+            transform: "translateX(-50%) rotate(-90deg)",
+          }}
+          aria-label="next"
+        >
+          <ArrowForwardIosIcon sx={{ transform: "rotate(90deg)" }} />
+        </Button>
       </div>
     </div>
   );
