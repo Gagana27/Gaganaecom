@@ -8,7 +8,7 @@ const handleDragStart = (e) => e.preventDefault();
 
 const HomeCarousel = () => {
   const item = homeCarouselData.map((item) => (
-    <Link to={item.path} className="cursor-pointer" key={item.path}>
+    <Link to={item.path} className="cursor-pointer -z-10" key={item.path}>
       <img
         src={item.image}
         alt=""
