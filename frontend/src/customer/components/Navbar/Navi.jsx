@@ -2,12 +2,11 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
-// import
+
 const navigation = {
   categories: [
     {
-
-      id: 'womens',
+      id: 'women',
       name: 'Women',
       featured: [
         {
@@ -131,11 +130,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navis() {
+export default function Navi() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-white z-50">
+    <div className="bg-white">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -409,8 +408,7 @@ export default function Navis() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  
-                <a href="/login" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     Sign in
                   </a>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
